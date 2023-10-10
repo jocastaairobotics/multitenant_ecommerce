@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'main/css/style.css'%}">
+    {% block style %}
+    <title>Home</title>
+    {% endblock %}
+</head>
+    <body>
+    <nav>
+        <a class="nav-button" href="{%url 'Home' %}">Home</a>
+        <a class="nav-button" href="{%url 'Privacy'%}">Privacy</a>
+        <a class="nav-button" href="{%url 'About'%}">About</a>
+        <a class="nav-button" href="{%url 'Career'%}">Career</a>
+    </nav>
+    {% block body%}
+    <h1>This is home page</h1>
+    {%endblock%}
+    <footer>
+        this is footer
+    </footer>
+    </body>
+</html>
