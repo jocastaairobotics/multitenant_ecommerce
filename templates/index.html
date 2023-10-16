@@ -16,7 +16,33 @@
         <a class="nav-button" href="{%url 'Career'%}">Career</a>
     </nav>
     {% block body%}
-    <h1>This is home page</h1>
+    <table border>
+        <tr>
+            <td>Sr No.</td>
+            <td>{{ sr_no }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ name }}</td>
+        </tr>
+        <tr>
+            <td>Class</td>
+            <td>{{ class }}</td>
+        </tr>
+        <tr>
+            <td>Marks</td>
+            <td>
+                <table border>
+                    {% for key, value in marks.items%}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                    {%endfor%}
+                </table>
+            </td>
+        </tr>
+    </table>
     {%endblock%}
     <footer>
         this is footer

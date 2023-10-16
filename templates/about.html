@@ -1,4 +1,19 @@
 {% extends 'index.html'%}
 {% block body%}
-    <h1>This is about page</h1>
+<table border>
+    <tr>
+        <td>Sr No.</td>
+        <td>Name</td>
+        <td>Class</td>
+        <td>Marks</td>
+    </tr>
+    {% for ele in lst %}
+    <tr>
+        <td>{{ele.sr_no}}</td>
+        <td>{{ele.name}}</td>
+        <td>{{ele.class}}</td>
+        <td>{{ele.marks}}</td>
+    </tr>
+    {% endfor %}
+</table>
     {%endblock%}
