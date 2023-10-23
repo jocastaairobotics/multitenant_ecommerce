@@ -5,5 +5,26 @@
 <link rel="stylesheet" href="{%static 'main/css/privacy.css'%}">
     {% endblock %}
 {% block body%}
-    <h1>This is privacy page</h1>
+    <table border>
+    <tr>
+        <td>Sr No.</td>
+        <td>Name</td>
+        <td>Class</td>
+        <td>Marks</td>
+    </tr>
+        {% for i in santoshi %}
+        <tr>
+            <td> {{i.sr_no}} </td>
+            <td> {{i.name}} </td>
+            <td> {{i.class}} </td>
+            <td> {{i.marks}} </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>{{ sr_no }}</td>
+            <td> {{ name }} </td>
+            <td>{{ class }}</td>
+            <td>{{ marks }}</td>
+        </tr>
+</table>
     {%endblock%}
