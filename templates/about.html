@@ -9,9 +9,11 @@
     {% for ele in lst %}
     <tr>
         <td>
-            <a href="{%url 'getSingleAbout' ele.sr_no%}">{{ ele.sr_no }}</a>
+            {{ ele.sr_no }}
         </td>
-        <td>{{ele.name}}</td>
+        <td>
+            <a href="{%url 'getSingleAbout' ele.sr_no%}">{{ele.name}}</a>
+        </td>
         <td>{{ele.class}}</td>
     </tr>
     {% endfor %}

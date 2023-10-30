@@ -66,6 +66,7 @@ def getSingleAbout(request, santoshi):
     for ele in list_object:
         if int(santoshi) == ele["sr_no"]:
             ctx = ele
+            break
 
     return render(request=request, template_name='privacy.html', context=ctx)
 
