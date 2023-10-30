@@ -5,14 +5,14 @@
         <td>Sr No.</td>
         <td>Name</td>
         <td>Class</td>
-        <td>Marks</td>
     </tr>
     {% for ele in lst %}
     <tr>
-        <td>{{ele.sr_no}}</td>
+        <td>
+            <a href="{%url 'getSingleAbout' ele.sr_no%}">{{ ele.sr_no }}</a>
+        </td>
         <td>{{ele.name}}</td>
         <td>{{ele.class}}</td>
-        <td>{{ele.marks}}</td>
     </tr>
     {% endfor %}
     {% for ele in lst2 %}
@@ -20,7 +20,6 @@
         <td>{{ele.sr_no}}</td>
         <td>{{ele.name}}</td>
         <td>{{ele.class}}</td>
-        <td>{{ele.marks}}</td>
     </tr>
     {% endfor %}
 </table>
