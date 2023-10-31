@@ -25,7 +25,7 @@ urlpatterns = [
     path(route="about", view=About, name="About"),
     path(route="about/<santoshi>", view=getSingleAbout, name="getSingleAbout"),
     path(route="api/privacy", view=Privacy, name="Privacy"),
-    path(route="api/career", view=Career, name="Career"),
+    path(route="career", view=Career, name="Career"),
     path('product/', include("Products.urls"))
 ]
 

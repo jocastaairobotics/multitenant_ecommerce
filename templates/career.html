@@ -1,5 +1,32 @@
 {% extends 'index.html'%}
 
 {% block body%}
-    <h1>This is career page</h1>
+
+    <table border>
+    <tr>
+        <td>Sr No.</td>
+        <td>Name</td>
+        <td>Class</td>
+        <td>Marks</td>
+    </tr>
+        {% for i in lst %}
+        <tr>
+            <td> {{i.sr_no}} </td>
+            <td> {{i.name}} </td>
+            <td> {{i.class}} </td>
+            <td> {{i.marks}} </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>{{ sr_no }}</td>
+            <td> {{ name }} </td>
+            <td>{{ class }}</td>
+            <td>{{ marks }}</td>
+        </tr>
+</table>
+
+<form action="" method="get">
+    {{ form.as_p }}
+    <input type="submit" value="submit"/>
+</form>
     {%endblock%}

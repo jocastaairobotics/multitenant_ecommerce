@@ -1,43 +1,43 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from .Forms import SearchStudentForm
 
 list_object = [
-        {
-            "sr_no": 1,
-            "name": "Santoshi",
-            "class": "MCA",
-            "marks": "90%"
-        },
-        {
-            "sr_no": 2,
-            "name": "Kanif",
-            "class": "BA",
-            "marks": "70%"
-        },
-        {
-            "sr_no": 3,
-            "name": "Niraj",
-            "class": "Engg",
-            "marks": "75%"
-        },
-        {
-            "sr_no": 4,
-            "name": "Iqbal",
-            "class": "BCA",
-            "marks": "60%"
-        },
-        {
-            "sr_no": 5,
-            "name": "Pratik",
-            "class": "Engg",
-            "marks": "80%"
-        },
-    ]
+    {
+        "sr_no": 1,
+        "name": "Santoshi",
+        "class": "MCA",
+        "marks": "90%"
+    },
+    {
+        "sr_no": 2,
+        "name": "Kanif",
+        "class": "BA",
+        "marks": "70%"
+    },
+    {
+        "sr_no": 3,
+        "name": "Niraj",
+        "class": "Engg",
+        "marks": "75%"
+    },
+    {
+        "sr_no": 4,
+        "name": "Iqbal",
+        "class": "BCA",
+        "marks": "60%"
+    },
+    {
+        "sr_no": 5,
+        "name": "Pratik",
+        "class": "Engg",
+        "marks": "80%"
+    },
+]
 
 
 def Home(request):
-
     """
         1) Single Object
         2) List of Object
@@ -54,7 +54,6 @@ def Home(request):
 
 
 def About(request):
-
     ctx = {
         "lst": list_object
     }
@@ -121,4 +120,11 @@ def Privacy(request):
 
 
 def Career(request):
-    return render(request=request, template_name='career.html', context=None)
+    name = SearchStudentForm()
+    data = request.GET
+    print(data)
+    ctx = {"form": name}
+    for i in list_object:
+        if i['name'] == data.get('name'):
+            ctx.update(i)
+    return render(request=request, template_name='career.html', context=ctx)
