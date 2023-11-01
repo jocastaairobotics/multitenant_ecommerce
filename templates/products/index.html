@@ -3,5 +3,9 @@
 {% load static %}
 
 {%block body%}
-<h1>This is {{name}}</h1>
+<form action="{% url 'CreateProduct' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit" />
+</form>
 {% endblock %}
