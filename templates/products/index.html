@@ -1,11 +1,28 @@
 {% extends 'index.html' %}
-
 {% load static %}
 
 {%block body%}
-<form action="{% url 'CreateProduct' %}" method="post">
+<form action="{%url 'CreateProduct' %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="submit" />
 </form>
+
+<table border>
+    <tr>
+        <th>name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>rating</th>
+    </tr>
+    {% for p in product %}
+    <tr>
+        <td>{{p.name}}</td>
+        <td> {{p.description}} </td>
+        <td> {{p.price}} </td>
+        <td> {{p.rating}} </td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}
