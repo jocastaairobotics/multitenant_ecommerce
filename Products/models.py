@@ -6,3 +6,6 @@ class Product(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     rating = models.FloatField()
+
+    def __str__(self):
+        return f"{self.name}, {self.price}, {self.rating}"
