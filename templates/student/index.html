@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<form action="{% url 'CreateStudentView' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+
+<table border>
+    <tr>
+        <th>name</th>
+        <th>DoB</th>
+        <th>Blood Group</th>
+        <th>Marks</th>
+        <th>Action</th>
+    </tr>
+    {% for p in data %}
+    <tr>
+        <td><a href="{% url 'GetFormStudent' p.id %}">{{p.name}} </a></td>
+        <td> {{p.dob}} </td>
+        <td> {{p.bg}} </td>
+        <td> {{p.marks}} </td>
+        <td>
+            <a href="{% url 'deleteStudentView' p.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{%endblock%}

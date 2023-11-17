@@ -12,3 +12,6 @@ class ProductFilterForm(forms.Form):
     name = forms.CharField(max_length=254)
     price = forms.IntegerField(required=False)
     rating = forms.FloatField(required=False)
+
+
+# ModelForm

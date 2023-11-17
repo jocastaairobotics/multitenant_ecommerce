@@ -26,7 +26,8 @@ urlpatterns = [
     path(route="about/<santoshi>", view=getSingleAbout, name="getSingleAbout"),
     path(route="api/privacy", view=Privacy, name="Privacy"),
     path(route="career", view=Career, name="Career"),
-    path('product/', include("Products.urls"))
+    path('product/', include("Products.urls")),
+    path('student/', include("Student.urls"))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
