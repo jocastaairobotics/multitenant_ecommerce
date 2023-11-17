@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<form action="{% url 'Employee' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+
+<table border>
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>city</th>
+        <th>Action</th>
+    </tr>
+    {% for p in data %}
+    <tr>
+        <td><a href="{% url 'EmployeeUpdateView' p.id %}">{{p.first_name}} </a></td>
+        <td> {{p.last_name}} </td>
+        <td> {{p.phone}} </td>
+        <td> {{p.email}} </td>
+        <td> {{p.city}} </td>
+        <td>
+            <a href="{% url 'deleteStudentView' p.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{%endblock%}

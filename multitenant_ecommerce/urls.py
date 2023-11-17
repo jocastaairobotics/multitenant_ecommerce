@@ -27,7 +27,8 @@ urlpatterns = [
     path(route="api/privacy", view=Privacy, name="Privacy"),
     path(route="career", view=Career, name="Career"),
     path('product/', include("Products.urls")),
-    path('student/', include("Student.urls"))
+    path('student/', include("Student.urls")),
+    path('employee/', include("Employee.urls"))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
