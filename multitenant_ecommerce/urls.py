@@ -28,7 +28,8 @@ urlpatterns = [
     path(route="career", view=Career, name="Career"),
     path('product/', include("Products.urls")),
     path('student/', include("Student.urls")),
-    path('employee/', include("Employee.urls"))
+    path('employee/', include("Employee.urls")),
+    path('banking/', include("Banking.urls"))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

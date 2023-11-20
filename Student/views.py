@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import StudentForm
 from .models import Student
+from django.views.generic.list import ListView
 
 
 def StudentFormView(request):
@@ -55,3 +56,4 @@ def deleteStudentView(request, id):
     st = Student.objects.get(id=id)
     st.delete()
     return redirect("/student/index")
+

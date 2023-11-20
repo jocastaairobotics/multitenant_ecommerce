@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+<table class="table table-striped table-hover w-75 m-auto">
+    <tr class="table-primary">
+        <th>name</th>
+        <th>DoB</th>
+        <th>Blood Group</th>
+        <th>Marks</th>
+        <th>Action</th>
+    </tr>
+    {% for p in object_list %}
+    <tr>
+        <td><a href="{% url 'GetFormStudent' p.id %}">{{p.name}} </a></td>
+        <td> {{p.dob}} </td>
+        <td> {{p.bg}} </td>
+        <td> {{p.marks}} </td>
+        <td>
+            <a href="{% url 'deleteStudentView' p.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{%endblock%}
