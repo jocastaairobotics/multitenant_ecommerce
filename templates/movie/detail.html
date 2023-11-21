@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<table class="table table-hover">
+    <tr>
+        <td>Movie Name</td>
+        <td>{{object.name}}</td>
+    </tr>
+    <tr>
+        <td>Actors</td>
+        <td>{{object.actors}}</td>
+    </tr>
+    <tr>
+        <td>Director</td>
+        <td>{{object.director}}</td>
+    </tr>
+    <tr>
+        <th>Songs</th>
+    </tr>
+    {% for song in object.movies.all %}
+
+    <tr>
+        <td>{{song.name}}</td>
+        <td>{{song.singer}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

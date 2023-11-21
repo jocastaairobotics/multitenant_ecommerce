@@ -29,7 +29,8 @@ urlpatterns = [
     path('product/', include("Products.urls")),
     path('student/', include("Student.urls")),
     path('employee/', include("Employee.urls")),
-    path('banking/', include("Banking.urls"))
+    path('banking/', include("Banking.urls")),
+    path('music/', include("Music.urls"))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)

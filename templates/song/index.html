@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block body%}
+
+<a class="btn btn-primary" href="{%url 'SongCreateView'%}">
+    Add Songs
+</a>
+
+<table class="table table-striped table-hover">
+  <tr class="table-warning">
+      <th>Name</th>
+      <th>Singer</th>
+      <th>Music Director</th>
+      <th>Movie Name</th>
+      <th>Action</th>
+  </tr>
+    {% for movie in object_list %}
+    <tr>
+      <td>{{movie.name}}</td>
+        <td>{{movie.singer}}</td>
+      <td>{{movie.music_director}}</td>
+        <td>{{movie.movie}}</td>
+      <td>
+          <a href="{% url 'SongDetailView' movie.id %}" class="btn btn-info">View</a>
+      </td>
+  </tr>
+    {%endfor%}
+
+</table>
+
+{%endblock%}

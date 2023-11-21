@@ -24,7 +24,10 @@
       <td>{{account.phone}}</td>
       <td>{{account.email}}</td>
       <td>{{account.city}}</td>
-      <td>Action</td>
+      <td>
+          <a href="{% url 'AccountUpdateView' account.id %}" class="btn btn-warning">Edit</a>
+          <a href="{% url 'AccountDetailView' account.id %}" class="btn btn-info">View</a>
+      </td>
   </tr>
     {%endfor%}
 

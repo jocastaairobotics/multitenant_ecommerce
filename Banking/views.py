@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import FormView, CreateView
+from django.views.generic import FormView, CreateView, UpdateView
 from .forms import AccountForm
 from .models import Account
 from django.views.generic.list import ListView
@@ -14,7 +14,7 @@ class AccountFormView(FormView):
 class AccountCreateView(CreateView):
     model = Account
     fields = "__all__"
-    success_url = "/banking/form"
+    success_url = "/banking/list"
 
 
 class AccountListView(ListView):
@@ -24,3 +24,11 @@ class AccountListView(ListView):
 
 class AccountDetailView(DetailView):
     model = Account
+    template_name = "banking/detail.html"
+
+
+class AccountUpdateView(UpdateView):
+    model = Account
+    fields = '__all__'
+    template_name = "banking/update.html"
+    success_url = "/banking/list"
